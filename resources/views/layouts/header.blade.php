@@ -1,0 +1,1 @@
+<header-component super_admin="{{  $super_admin }}"></header-component>

@@ -1,0 +1,6 @@
+mutation payOrder($input: PayOrderInput!) {
+    payOrder(input: $input) {
+        reference
+        processUrl
+    }
+}

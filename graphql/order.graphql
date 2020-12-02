@@ -1,0 +1,25 @@
+input CreateOrderInput {
+    id: ID
+    total: String @rules(apply: ["required"])
+    phone: String @rules(apply: ["required"])
+}
+
+input PayOrderInput {
+    id: ID
+    reference: String @rules(apply: ["required"])
+}
+
+
+type Order {
+    id: ID!
+    created_at: Date
+    customer_name: String
+    status: String!
+    customer_email: String
+    customer_mobile: String
+    requestId: String
+    processUrl: String
+    reference: String
+    total: String
+}
+

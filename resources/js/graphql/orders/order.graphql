@@ -1,0 +1,14 @@
+query order ($id: Int!){
+    order(id:$id){
+        ...fieldOnOrder
+    }
+}
+
+fragment fieldOnOrder on Order {
+    id
+    status
+    processUrl
+    total
+    reference
+    customer_mobile
+}

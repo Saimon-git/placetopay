@@ -1,0 +1,41 @@
+#import user.graphql
+#import order.graphql
+#import auth.graphql
+
+scalar Mixed @scalar(class: "MLL\\GraphQLScalars\\Mixed")
+scalar Date @scalar(class: "DateScalar")
+scalar Upload @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Upload")
+scalar JSON @scalar(class: "MLL\\GraphQLScalars\\JSON")
+
+enum Operator {
+    EQ @enum(value: "=")
+    NEQ @enum(value: "!=")
+    GT @enum(value: ">")
+    GTE @enum(value: ">=")
+    LT @enum(value: "<")
+    LTE @enum(value: "<=")
+    LIKE @enum(value: "LIKE")
+    NOT_LIKE @enum(value: "NOT_LIKE")
+}
+
+type Query {
+    roles: [Role!]! @all @guard(with: ["api", "web"])
+    users: [User!]! @paginate(scopes: ["byUser"]) @guard(with: ["api", "web"])
+    user(id: Int! @eq): User @find @guard(with: ["api", "web"])
+    me: User! @auth @guard(with: ["api", "web"])
+    orders: [Order!]! @paginate @guard(with: ["api", "web"])
+    order(id: Int! @eq): Order @find @guard(with: ["api", "web"])
+}
+
+type Mutation {
+    login(input: LoginInput @spread): AuthPayload! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\Login@resolve")
+    refreshToken(input: RefreshTokenInput @spread): RefreshTokenPayload! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\RefreshToken@resolve")
+    logout: LogoutResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\Logout@resolve")
+    forgotPassword(input: ForgotPasswordInput! @spread): ForgotPasswordResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\ForgotPassword@resolve")
+    updateForgottenPassword(input: NewPasswordWithCodeInput @spread): ForgotPasswordResponse! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\ResetPassword@resolve")
+    register(input: RegisterInput @spread): RegisterResponse!
+    socialLogin(input: SocialLoginInput! @spread): AuthPayload! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\SocialLogin@resolve")
+    verifyEmail(input: VerifyEmailInput! @spread): AuthPayload! @field(resolver: "Joselfonseca\\LighthouseGraphQLPassport\\GraphQL\\Mutations\\VerifyEmail@resolve")
+    createOrder(input: CreateOrderInput! @spread): Order @guard(with: ["api", "web"])
+    payOrder(input: PayOrderInput! @spread): Order @guard(with: ["api", "web"])
+}

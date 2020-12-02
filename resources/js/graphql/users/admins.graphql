@@ -1,0 +1,11 @@
+query users($page: Int) {
+    users(
+        first: 20,
+        page: $page
+        hasUserRoles: {column: DISABLED, operator: EQ, value: false},
+        hasRoles: {column: NAME, operator: EQ, value: "Administrator"}
+    ),
+        {data {id created_at first_name last_name username email phone extension avatar}
+        paginatorInfo {currentPage lastPage total count firstItem}
+    }
+}

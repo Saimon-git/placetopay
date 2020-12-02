@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Services\Installation\Events;
+
+use App\User;
+
+/**
+ * Class ApplicationWasInstalled.
+ */
+class ApplicationWasInstalled
+{
+    /**
+     * @var
+     */
+    public $adminUser;
+    /**
+     * @var
+     */
+    public $roles;
+    /**
+     * @var
+     */
+    public $permissions;
+
+    /**
+     * ApplicationWasInstalled constructor.
+     *
+     * @param $roles
+     * @param $permissions
+     */
+    public function __construct(User $adminUser, $roles, $permissions)
+    {
+        $this->adminUser = $adminUser;
+        $this->roles = $roles;
+        $this->permissions = $permissions;
+    }
+}

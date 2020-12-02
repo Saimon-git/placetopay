@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+
+@import "./base.css";
+@import "./button.css";
+@import "./login.css";
+@import "./custom.css";
+
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+@import "vue-select/dist/vue-select.css";
+@import 'vue2-datepicker/index.css';
+@import "vue-multiselect/dist/vue-multiselect.min.css";

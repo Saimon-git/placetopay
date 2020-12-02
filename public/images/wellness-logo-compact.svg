@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="80px" height="80px" viewBox="0 0 80 80" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <linearGradient x1="136.987305%" y1="100%" x2="-15.4174805%" y2="-11.9628906%" id="linearGradient-1">
+            <stop stop-color="#F5C049" offset="0%"></stop>
+            <stop stop-color="#FFB202" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <circle id="Oval" fill="url(#linearGradient-1)" cx="40" cy="40" r="40"></circle>
+            <polygon id="Path-2" fill="#F9F9F9" fill-rule="nonzero" points="28.655862 33.0805378 40.352317 23 52.085086 33.1123164 61.1057952 25.109438 66 30.6863955 52.1559042 42.9682646 40.352317 32.7958824 28.5119056 43 15 30.6495879 19.9759534 25.1462456"></polygon>
+            <polygon id="Path-2" fill="#F9F9F9" fill-rule="nonzero" points="28.655862 51.0805378 40.352317 41 52.085086 51.1123164 61.1057952 43.109438 66 48.6863955 52.1559042 60.9682646 40.352317 50.7958824 28.5119056 61 15 48.6495879 19.9759534 43.1462456"></polygon>
+        </g>
+    </g>
+</svg>

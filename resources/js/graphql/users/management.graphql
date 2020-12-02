@@ -1,0 +1,27 @@
+query usermanagement($page_users: Int, $page_admins: Int) {
+    users: users(
+        first: 20,
+        page: $page_users
+    ),{
+        data {
+            ...fieldOnUser
+        }
+        paginatorInfo {currentPage lastPage total count firstItem}
+    }
+    admins: users(
+        first: 20,
+        page: $page_admins
+    ),{
+        data {
+            ...fieldOnUser
+        }
+        paginatorInfo {currentPage lastPage total count firstItem}
+    }
+}
+
+fragment fieldOnUser on User {
+    id
+    name
+    username
+    email
+}

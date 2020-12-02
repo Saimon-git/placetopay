@@ -1,0 +1,9 @@
+mutation deleteAdminRole($id: ID!) {
+    deleteAdminRole(id:$id) {
+        id
+        first_name
+        last_name
+        username
+        email
+    }
+}

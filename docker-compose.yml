@@ -1,0 +1,44 @@
+version: '3'
+services:
+  app:
+    image: joselfonsecadt/nginx-php7.3-dev:latest
+    volumes:
+      - ./:/var/www/html
+    ports:
+      - 80:80
+    networks:
+      - scaffold
+  horizon:
+    image: joselfonsecadt/nginx-php7.3-dev:latest
+    command: php /var/www/html/artisan horizon
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - scaffold
+  scheduler:
+    image: joselfonsecadt/nginx-php7.3-dev:latest
+    command: ./var/www/html/bin/run-scheduler.sh
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - scaffold
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: placetopay
+    volumes:
+      - ./docker/mysql/data/:/var/lib/mysql
+    ports:
+      - 3306:3306
+    networks:
+      - scaffold
+  redis:
+    image: redis:5-alpine
+    ports:
+      - 6379:6379
+    networks:
+      - scaffold
+networks:
+  scaffold:
+    driver: bridge

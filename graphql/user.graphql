@@ -1,0 +1,28 @@
+input UpdateUserPasswordInput {
+    id: ID
+    password: String @rules(apply: ["required", "confirmed", "min:8"])
+    password_confirmation: String
+}
+
+
+type User {
+    id: ID!
+    created_at: Date
+    name: String
+    username: String!
+    email: String!
+    roles: [Role] @belongsToMany
+    permissions: [Permission] @belongsToMany
+    avatar:String
+}
+
+type Role {
+    id: ID!
+    name: String!
+    permissions: [Permission]
+}
+
+type Permission {
+    id: ID!
+    name: String!
+}

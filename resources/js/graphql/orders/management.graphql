@@ -1,0 +1,20 @@
+query ordermanagement($page_orders: Int) {
+    orders: orders(
+        first: 20,
+        page: $page_orders
+    ),{
+        data {
+            ...fieldOnOrder
+        }
+        paginatorInfo {currentPage lastPage total count firstItem}
+    }
+}
+
+fragment fieldOnOrder on Order {
+    id
+    status
+    customer_name
+    customer_email
+    created_at
+    reference
+}

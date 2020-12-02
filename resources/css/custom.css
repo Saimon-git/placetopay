@@ -1,0 +1,241 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+    z-index: 100;
+}
+
+.notifications {
+    width: 25%;
+    box-shadow: 0 4px 5px -2px #000000;
+}
+
+.bg-notifications {
+    background-color: #ECECEC;
+}
+
+.ul-notifications {
+    height: 85vh;
+}
+
+.notification-pending {
+    background-color: #f7deae;
+    font-weight: bold;
+}
+
+.bg-challenge {
+    background-color: #f4f4f4;
+}
+
+.bg-performance-full {
+    background-color: #e9a43e;
+    color: #ffffff;
+}
+
+.bg-performance-content-full {
+    background-color: #f7deae;
+    font-weight: bold;
+}
+
+.bg-performance-light {
+    background-color: #efbb57;
+    color: #ffffff;
+}
+
+.bg-performance-content-light {
+    background-color: #fbedd2;
+    font-weight: bold;
+}
+
+.profile-image {
+    width: 128px;
+    height: 128px;
+}
+
+.user-avatar-image {
+    width: 44px;
+    height: 44px;
+    display: inline-block;
+}
+
+.active {
+    border-bottom: 3px solid orange;
+    font-weight: bold;
+}
+
+.bg-calendar {
+    background-color: #f1f1f1;
+}
+
+.border-blue-calendar {
+    border-color: #89bade;
+}
+
+.bg-challenge-calendar {
+    background-color: #e9a43e;
+    color: #ffffff;
+    margin-right: -20px;
+    margin-left: -5px;
+}
+
+.bg-challenge-calendar-first {
+    padding: 1.75rem !important;
+}
+
+.bg-challenge-calendar-last {
+    margin-right: -5px;
+    margin-left: -5px;
+}
+
+.bg-challenge-calendar-current {
+    margin-top: -1px;
+}
+
+.container-overlay {
+    position: relative;
+    width: 100%;
+}
+
+.image-overlay {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.overlay {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.container-overlay:hover .image-overlay {
+    opacity: 0.3;
+}
+
+.container-overlay:hover .overlay {
+    opacity: 1;
+}
+
+.container-overlay-favorite:hover .image-overlay {
+    opacity: 1;
+}
+
+.overlay-favorite {
+    top: 15%;
+    left: 95%;
+    opacity: 1;
+}
+
+.max-h-64 {
+    max-height: 3rem;
+}
+
+.text {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.font-size-16 {
+    font-size: 16px;
+}
+
+.trix-button-group--file-tools {
+    display: none !important;
+}
+
+.trix-button--icon-attach {
+    display: none;
+}
+
+.trix-content ul, .content-show ul {
+    list-style: inherit;
+}
+
+.trix-content ol, .content-show ol {
+    list-style: decimal;
+}
+
+.m-1\/12 {
+    margin-left: 8.333333%;
+}
+
+.m-1\/5 {
+    margin-left: 20%;
+}
+
+.mx-datepicker-dashboard {
+    width: 6% !important;
+}
+
+.daily-item-border {
+    border-color: #979797;
+}
+
+.daily-item-create {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+}
+
+.icon-dashboard-top {
+    top: -0.5rem;
+}
+
+.leaderboard-filter {
+    background-color: #979797;
+}
+
+.select-leaderboard {
+    color: white;
+    height: 100%;
+    background-color: transparent;
+}
+
+.trix-content a {
+    text-decoration: underline;
+    color: -webkit-link;
+}
+
+.toggle-aside{
+    -webkit-transition : 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+    -moz-transition : 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) all;
+}
+
+.m-h-daily {
+    min-height: 17.3rem;
+}
+
+.daily-margin {
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
+}
+
+@media (max-width: 1280px) {
+    .add-content{
+        padding-bottom: 6rem !important;
+    }
+
+}
+
+@media (max-width: 1240px) {
+    .content-is-challenge{
+        width: 100% !important;
+    }
+    .content-start-date{
+        margin-right: 3rem !important;
+    }
+
+}
+
+@media (max-width: 1225px) {
+    .add-content{
+        padding-bottom: 0 !important;
+    }
+
+}
+

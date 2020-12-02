@@ -1,0 +1,97 @@
+{
+    "name": "placetopay",
+    "type": "project",
+    "description": "Integration a place to pay",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "propietary",
+    "require": {
+        "php": "^7.3",
+        "dnetix/redirection": "^1.0",
+        "fideloper/proxy": "^4.3",
+        "jenssegers/agent": "^2.6",
+        "joselfonseca/lighthouse-graphql-passport-auth": "^4.1",
+        "laravel/framework": "^7.0",
+        "laravel/horizon": "^4.0",
+        "laravel/passport": "^8.4",
+        "laravel/socialite": "^4.3",
+        "laravel/tinker": "^2.2",
+        "league/flysystem-aws-s3-v3": "^1.0.24",
+        "maatwebsite/excel": "^3.1",
+        "mll-lab/graphql-php-scalars": "^3.0",
+        "mll-lab/laravel-graphql-playground": "^2.0",
+        "nuwave/lighthouse": "^4.10",
+        "pragmarx/health": "^0.10.2",
+        "predis/predis": "^1.1",
+        "sentry/sentry-laravel": "^1.6",
+        "spatie/laravel-permission": "^3.8"
+    },
+    "require-dev": {
+        "beyondcode/laravel-dump-server": "^1.0",
+        "facade/ignition": "^2.0",
+        "friendsofphp/php-cs-fixer": "^2.15",
+        "fzaninotto/faker": "^1.4",
+        "haydenpierce/class-finder": "^0.4.2",
+        "mockery/mockery": "^1.0",
+        "mpociot/laravel-test-factory-helper": "^2.1",
+        "nunomaduro/collision": "^4.1",
+        "phpunit/phpunit": "^8.5"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ],
+        "post-update-cmd": [],
+        "test": [
+            "php artisan test"
+        ],
+        "cs": [
+            "vendor/bin/php-cs-fixer fix app/",
+            "vendor/bin/php-cs-fixer fix config/",
+            "vendor/bin/php-cs-fixer fix database/",
+            "vendor/bin/php-cs-fixer fix routes/",
+            "vendor/bin/php-cs-fixer fix tests/"
+        ],
+        "reset": [
+            "@php artisan migrate:fresh",
+            "@php artisan app:install --default",
+            "@php artisan db:seed",
+            "@php artisan app:import-stats"
+        ]
+    }
+}
